@@ -259,6 +259,17 @@ class Container extends CDNContainer
     {
         return $this->CDNinfo('Streaming-Uri');
     }
+    
+    /**
+     * Returns the iOS URI for the container
+     *
+     * @api
+     * @return string
+     */
+    public function IosURI()
+    {
+        return $this->CDNinfo('Ios-Uri');
+    }
 
     /**
      * Creates a Collection of objects in the container

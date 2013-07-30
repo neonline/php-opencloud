@@ -607,6 +607,54 @@ class DataObject extends ObjectStore
                 return $prefix.'/'.$this->name;
         }
     }
+    
+    /**
+     * Returns the object's Streaming URL, if available
+     *
+     * @api
+     * @return string
+     */
+    public function StreamingURL($type = null)
+    {
+        if (!$prefix = $this->Container()->CDNURI()) {
+            return null;
+        }
+
+        return $this->Container()->StreamingURI().'/'.$this->name;
+    
+    }
+    
+    /**
+     * Returns the object's SSL URL, if available
+     *
+     * @api
+     * @return string
+     */
+    public function SSLURL($type = null)
+    {
+        if (!$prefix = $this->Container()->CDNURI()) {
+            return null;
+        }
+
+        return $this->Container()->SSLURI().'/'.$this->name;
+    
+    }
+    
+    /**
+     * Returns the object's iOS URL, if available
+     *
+     * @api
+     * @return string
+     */
+    public function IosURL($type = null)
+    {
+        if (!$prefix = $this->Container()->CDNURI()) {
+            return null;
+        }
+
+        return $this->Container()->IosURI().'/'.$this->name;
+    
+    }
 
     /**
      * Sets parameters from an array; validates them
